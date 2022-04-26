@@ -1,12 +1,10 @@
-import com.github.javafaker.Faker;
-import lombok.Data;
 
-@Data
+import lombok.Value;
+
+@Value
 public class RegistrationInfo {
-    private final String name;
-    private final String phone ;
-    private final String cardNumber ;
-
-
+    String name;
+    String phone;
+    String city;
 
 }
