@@ -33,8 +33,8 @@ public class CardDeliveryTest {
         $x("//input[@placeholder ='Дата встречи']").sendKeys(Keys.BACK_SPACE);
         $x("//input[@placeholder ='Дата встречи']").val(DataGenerator.Registration.generateDate(daysToAddForSecondMeeting));
         $(".button[role='button']").click();
-        $x("button__text").should(Condition.text("Перепланировать")).click();
-        $("button__content").should(Condition.visible);
+        $x("[data-test-id=replan-notification]").click();
+
 
 
 
