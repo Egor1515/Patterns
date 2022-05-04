@@ -1,11 +1,7 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-
-import javax.xml.crypto.Data;
-import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -20,7 +16,7 @@ public class CardDeliveryTest {
         Configuration.browserSize = "980x900";
         var daysToAddForFirstMeeting = 4;
         var daysToAddForSecondMeeting = 5;
-        open("http://localhost:9999/");
+        open("http://localhost:7777/");
         $x("//input[@placeholder = 'Город']").val(DataGenerator.Registration.generateInfo("ru").getCity());
         $x("//input[@placeholder ='Дата встречи']").doubleClick();
         $x("//input[@placeholder ='Дата встречи']").sendKeys(Keys.BACK_SPACE);
@@ -36,6 +32,7 @@ public class CardDeliveryTest {
         $(".button[role='button']").click();
         $("[class ='button button_view_extra button_size_s button_theme_alfa-on-white']").click();
         $("[data-test-id='success-notification']").should(Condition.visible,Condition.text("Встреча успешно запланирована на "));
+
 
 
     }
