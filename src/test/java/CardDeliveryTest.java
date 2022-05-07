@@ -16,7 +16,7 @@ public class CardDeliveryTest {
         Configuration.browserSize = "980x900";
         var daysToAddForFirstMeeting = 4;
         var daysToAddForSecondMeeting = 5;
-        open("http://localhost:7777/");
+        open("http://localhost:9999/");
         $x("//input[@placeholder = 'Город']").val(DataGenerator.Registration.generateInfo("ru").getCity());
         $x("//input[@placeholder ='Дата встречи']").doubleClick();
         $x("//input[@placeholder ='Дата встречи']").sendKeys(Keys.BACK_SPACE);
