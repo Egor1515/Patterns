@@ -17,7 +17,7 @@ public class CardDeliveryTest {
         var daysToAddForFirstMeeting = 4;
         var daysToAddForSecondMeeting = 5;
         open("http://localhost:9999/");
-        $x("//input[@placeholder = 'Город']").val(DataGenerator.Registration.generateInfo("ru").getCity());
+        $x("//input[@placeholder = 'Город']").val(info.getCity());
         $x("//input[@placeholder ='Дата встречи']").doubleClick();
         $x("//input[@placeholder ='Дата встречи']").sendKeys(Keys.BACK_SPACE);
         $x("//input[@placeholder ='Дата встречи']").val(DataGenerator.Registration.generateDate(daysToAddForFirstMeeting));
@@ -32,8 +32,7 @@ public class CardDeliveryTest {
         $(".button[role='button']").click();
         $("[class ='button button_view_extra button_size_s button_theme_alfa-on-white']").click();
         $("[data-test-id='success-notification']").should(Condition.visible,Condition.text("Встреча успешно запланирована на "));
-
-
+        $x("//*[@id=\"root\"]/div/div[1]/div[3]").should(Condition.visible);
 
     }
 
